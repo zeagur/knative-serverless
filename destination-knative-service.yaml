@@ -1,4 +1,4 @@
-apiVersion: serving.knative.dev/v1alpha1
+apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: destination-kn
@@ -8,7 +8,7 @@ spec:
   template:
     spec:
       containers:
-        - image: moficodes/destination:v0.0.2
+        - image: quay.io/zeagur/destination:latest
           env:
             - name: HOST_IP
               value: destination

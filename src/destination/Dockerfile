@@ -1,6 +1,8 @@
-FROM node:10.16.1-alpine
+FROM node:lts-alpine
 
 WORKDIR /app
+
+RUN adduser -S appuser -G root
 
 COPY package*.json ./
 
@@ -12,6 +14,10 @@ COPY .babelrc cities.csv swagger.yaml ./
 
 COPY src ./src
 
+RUN chgrp -R 0 /app
+RUN chmod -R g=u /app
+USER appuser
+
 EXPOSE 4000
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
