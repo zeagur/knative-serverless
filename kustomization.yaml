@@ -1,0 +1,3 @@
+resources:
+  - destination-knative-service.yaml
+  - ui-knative-service.yaml
