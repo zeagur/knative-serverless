@@ -9,4 +9,4 @@ spec:
         - image: quay.io/zeagur/bee-ui:latest
           env:
             - name: DESTINATION_URL
-              value: http://destination-kn.svl-demo.svc.cluster.local
+              value: http://destination-kn.knative-svl-demo.svc.cluster.local
